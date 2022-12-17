@@ -7,12 +7,13 @@
     <header>
         <h1><a href="https://mina05.pythonanywhere.com/admin/">My First Blog</a></h1>
     </header>
-    <article>
-        <time>published in 17.12.2022 <br>15:00</time>
-        <h2><a href="https://mina05.pythonanywhere.com/admin/blog/post/">My posts</a></h2>
-        <p><em><strong>Django Girls это очень классное, интересное, познавательное и веселое мероприятие!!!</strong></em></p>
-        <time>published in 17.12.2022 <br>15:17</time>
-        
-    </article>
+    {% for post in posts %}
+        <article>
+            <time>published: {{ post.published_date }}</time>
+            <h2><a href=''>{{ post.title }}</a></h2>
+            <p>{{ post.text | linebreaksbr }}</p> 
+        </article>
+    {% endfor %}
+    
 </body> 
 </html> 
